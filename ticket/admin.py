@@ -4,5 +4,5 @@ from .models import Ticket
 
 @admin.register(Ticket)
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ['departure_city', 'destination_city', 'cabin_class']
+    list_display = ['flight_name', 'departure_city', 'destination', 'cabin_class']
     

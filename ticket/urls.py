@@ -1,9 +1,12 @@
 from . import views
 from django.urls import path
+from .appViews import TicketList, TicketDetail
+
 
 app_name = 'ticket'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('search_ticket', views.ticket_search, name='search'),
-    path('tickets_detail/<int:pk>', views.ticket_detail, name = 'detail')
+    path('available_tickets', TicketList.as_view(), name='available_tickets'),
+    path('available_ticket/<int:pk>', TicketDetail.as_view(), name='ticket_detail')
 ]
+

@@ -7,6 +7,6 @@ app_name = 'ticket'
 urlpatterns = [
     path('', views.index, name='index'),
     path('available_tickets', TicketList.as_view(), name='available_tickets'),
-    path('available_ticket/<int:pk>', TicketDetail.as_view(), name='ticket_detail')
+    path('available_tickets/<int:pk>', TicketDetail.as_view(), name='available_tickets')
 ]
 

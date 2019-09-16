@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class='container'>
+    <div class='row'>
+      {% if flight_list %}
+        {% for flight in flight_list %}
+          <div class='col-md-12'>
+            
+          </div>
+          <br><br>
+          <div class='col-md-3'>
+            <h2>{{ flight.departure_city}}</h2>
+            <p>{{flight.departure_time}}</p>
+            <p>{{ flight.flight_name}}</p>
+            <p><strong>Price:</strong> {{flight.price}}<p>
+          </div>
+            <div class='col-md-2'>
+            <span> ---------------</span>
+            </div>        
+          <div class='col-md-3 offset-left'>
+             <h2>{{flight.destination}}</h2>
+            <p>{{flight.arrival_time}}</p>
+          </div>
+          <div>
+          <input type="submit" value="Book" class="btn-success">
+          </div>
+        {% endfor %}
+      {% else %}
+        <p> No Available flight</p>
+      {% endif %}
+    
+    </div>
+  
+  </div>
+{% endblock %}
